@@ -1,0 +1,305 @@
+/* ==========================================================================
+   #COMPANIES SECTION - EMPRESAS PARCEIRAS
+   ========================================================================== */
+
+.companies-section {
+  padding: 5rem 0;
+  background-color: var(--color-surface);
+  position: relative;
+  overflow: hidden;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+}
+
+.section-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: var(--color-text);
+}
+
+.section-subtitle {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  margin-bottom: 0;
+}
+
+/* Slider de empresas */
+.companies-slider {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto 4rem;
+  padding: 0 3rem;
+}
+
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.slider-arrow:hover {
+  background-color: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+}
+
+.slider-arrow--prev {
+  left: 0;
+}
+
+.slider-arrow--next {
+  right: 0;
+}
+
+.companies-track {
+  display: flex;
+  gap: 3rem;
+  padding: 2rem 0;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.companies-track::-webkit-scrollbar {
+  display: none;
+}
+
+.company-logo {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  background: var(--color-surface-dark);
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  transition: all 0.3s ease;
+  min-height: 120px;
+}
+
+.company-logo:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border-color: var(--color-primary-light);
+}
+
+.company-logo img {
+  max-width: 150px;
+  max-height: 80px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.company-logo:hover img {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+/* Card de depoimento */
+.testimonial-card {
+  max-width: 800px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, var(--color-surface-dark) 0%, var(--color-surface) 100%);
+  border-radius: 16px;
+  padding: 3rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--color-border);
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonial-card::before {
+  content: '"';
+  position: absolute;
+  top: 2rem;
+  right: 3rem;
+  font-size: 10rem;
+  font-family: Georgia, serif;
+  color: var(--color-primary);
+  opacity: 0.1;
+  line-height: 1;
+  z-index: 0;
+}
+
+.testimonial-content {
+  position: relative;
+  z-index: 1;
+}
+
+.testimonial-card blockquote {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-style: italic;
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--color-text);
+  margin-bottom: 1.5rem;
+}
+
+.testimonial-card footer {
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonial-card cite {
+  font-style: normal;
+  font-weight: 600;
+  color: var(--color-text);
+  font-size: 1.1rem;
+}
+
+.testimonial-role {
+  font-size: 0.9375rem;
+  color: var(--color-text-secondary);
+  margin-top: 0.25rem;
+}
+
+/* Animações */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-150px * 5));
+  }
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .companies-slider {
+    padding: 0 1rem;
+  }
+  
+  .slider-arrow {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .company-logo {
+    min-height: 100px;
+  }
+  
+  .company-logo img {
+    max-width: 120px;
+    max-height: 60px;
+  }
+  
+  .testimonial-card {
+    padding: 2rem;
+  }
+  
+  .testimonial-card::before {
+    font-size: 8rem;
+    top: 1rem;
+    right: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.875rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1.0625rem;
+  }
+  
+  .slider-arrow {
+    display: none;
+  }
+  
+  .companies-track {
+    gap: 1.5rem;
+    padding: 1rem 0;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+  
+  .company-logo {
+    min-width: 200px;
+    padding: 1rem;
+  }
+  
+  .testimonial-card {
+    padding: 1.75rem;
+  }
+  
+  .testimonial-card blockquote {
+    font-size: 1.0625rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .companies-section {
+    padding: 3rem 0;
+  }
+  
+  .section-title {
+    font-size: 1.625rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1rem;
+  }
+  
+  .company-logo {
+    min-width: 180px;
+  }
+  
+  .company-logo img {
+    max-width: 100px;
+    max-height: 50px;
+  }
+  
+  .testimonial-card {
+    padding: 1.5rem;
+  }
+  
+  .testimonial-card::before {
+    font-size: 6rem;
+    top: 0.5rem;
+    right: 1rem;
+  }
+  
+  .testimonial-card blockquote {
+    font-size: 1rem;
+  }
+  
+  .testimonial-card cite {
+    font-size: 1rem;
+  }
+  
+  .testimonial-role {
+    font-size: 0.875rem;
+  }
+}
