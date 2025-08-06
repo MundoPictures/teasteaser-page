@@ -1,0 +1,131 @@
+/* ==========================================================================
+   #APP STYLES
+   ========================================================================== */
+
+/* Estilos base para o contêiner principal do aplicativo */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Estilos para o wrapper de conteúdo */
+.content-wrapper {
+  flex: 1 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Estilos para o conteúdo principal */
+#main-content {
+  flex: 1 0 auto;
+  width: 100%;
+  outline: none;
+}
+
+/* Estilos para links */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+a:hover,
+a:focus {
+  color: var(--color-primary-light);
+  text-decoration: underline;
+}
+
+/* Estilos para botões */
+button {
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1.5;
+  transition: all 0.2s ease;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Estilos para seções */
+section {
+  padding: 4rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Container para conteúdo centralizado */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Estilos para títulos de seção */
+.section-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--color-text);
+  line-height: 1.2;
+}
+
+.section-subtitle {
+  font-size: 1.25rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 2rem;
+  max-width: 800px;
+}
+
+/* Estilos para destaques */
+.highlight {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+/* Estilos para rolagem suave */
+.smooth-scroll {
+  scroll-behavior: smooth;
+}
+
+/* Estilos para telas pequenas */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.75rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  section {
+    padding: 3rem 0;
+  }
+}
+
+/* Estilos para telas muito pequenas */
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.5rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1rem;
+  }
+  
+  section {
+    padding: 2rem 0;
+  }
+}
